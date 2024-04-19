@@ -1,0 +1,89 @@
+<div class="background-image">
+  <nz-carousel nzAutoPlay [nzEffect]="'fade'" [nzDots]="true" [nzLoop]="true" [nzEnableSwipe]="true">
+    @for (index of imgData; track index) {
+    <div nz-carousel-content>
+      <img class="carousel-img" [src]="index" alt="">
+    </div>
+    }
+
+  </nz-carousel>
+  <nav [ngClass]="{ 'scrolled': scrolled }">
+    <div nz-flex [nzVertical]="false" [nzJustify]="'space-between'" [nzAlign]="'center'" style="width: 100%;">
+      <!-- 顶部 -->
+      <div *ngIf="!scrolled" nz-flex [nzVertical]="false" [nzJustify]="'space-between'" [nzAlign]="'center'"
+        style="width: 100%;">
+        <div class="logo">
+          <img nz-image width="135px" nzSrc="../assets/logo_white.png" alt="">
+        </div>
+        <div class="nav_buttons">
+          <button class="custom-button">
+            作品
+          </button>
+          <button class="custom-button">
+            业务
+          </button>
+          <button class="custom-button">
+            关于
+          </button>
+          <button class="custom-button">
+            联系
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="scrolled" nz-flex [nzVertical]="false" [nzJustify]="'space-between'" [nzAlign]="'center'"
+        style="width: 100%;">
+        <div class="logo">
+          <img nz-image width="70px" nzSrc="../assets/logo.png" alt="">
+        </div>
+        <div class="nav_buttons">
+          <button class="custom-button_blue">
+            作品
+          </button>
+          <button class="custom-button_blue">
+            业务
+          </button>
+          <button class="custom-button_blue">
+            关于
+          </button>
+          <button class="custom-button_blue">
+            联系
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="description" nz-flex [nzJustify]="'center'" [nzAlign]="'center'">
+  <!-- <h1 class="cssanimation blurInBottom">一作岛屿品牌咨询🌊</h1> -->
+  <div nz-col nzSpan="12">
+
+  </div>
+  <div class="description-text" nz-col nzSpan="12">
+    <p>致力于为注重“企业形象”和“品牌气质”的高要求客户</p>
+    <p>提供LOGO｜品牌｜包装设计服务。</p>
+    <p class="description-text-3">曾经犯过的错误、积累的经验与案例将是我最宝贵的资产。</p>
+  </div>
+
+</div>
+<div class="show" nz-flex [nzVertical]="true" [nzAlign]="'center'">
+
+  <div class="show_title">
+    <h1 nz-typography class="left-align">项目案例</h1>
+    <nz-divider style="color: black;"></nz-divider>
+    <h2 nz-typography class="right-align">不止展示最优秀的</h2>
+  </div>
+
+  <div class="show_content">
+    <div nz-row>
+      <ng-container *ngFor="let image of images">
+        <div nz-col nzSpan="12" class="show_img">
+          <img [src]="image.url" [alt]="image.alt">
+          <h2 nz-typography class="img-title">标题</h2>
+          <h4 nz-typography class="img-content">描述</h4>
+        </div>
+      </ng-container>
+
+    </div>
+  </div>
+</div>
